@@ -139,20 +139,55 @@ Throughout these iterations, `Ψ_ID14` exhibited bounded oscillatory behavior, i
 -   The coupling between ID14 and ID26 was evident, with changes in `Φ_field` influencing `Ψ_ID14` oscillations, and `Ψ_ID14` in turn driving the nonlinear terms in the `Φ_field` PDE.
 -   The `tanh` saturation ensures that even if `Ψ_ID14` were to achieve large magnitudes, its multiplicative effect on the feedback terms in the `Φ_field` PDE would be limited, preventing runaway positive feedback.
 
+### 4.4. Achievement of High-Activity Stable State
+
+Subsequent to the initial explorations detailed above, a significant breakthrough was achieved by further systematic tuning of key damping and coupling parameters. A stable, high-activity oscillatory state with sustained `Φ_field` growth was realized with the following parameter set:
+
+-   **ID14 Parameters:**
+    -   `beta_psi_ID14` (linear damping on `Psi_ID14`): `2.0` (reduced from `U_E/R_char ≈ 10.79`)
+-   **ID14-ID26 Coupling & ID26 Feedback Parameters:**
+    -   `k_R_phi_prime` (coupling `R_radiative` to `dPsi_dt`): `0.01` (reduced from `0.1`)
+    -   `kappa_R` (base emission for `R_radiative`): `1.0` (reduced from `10.0`)
+-   **Other Key Parameters (maintained):**
+    -   `alpha_Phi_PDE = 2.1`
+    -   `epsilon_Phi_PDE = 2.1`
+    -   `beta_Phi_PDE = 0.0001`
+-   **Initial Conditions:** `Psi_ID14(0) = 0.5`, `I(0) = 0`, `R(0) = 0`
+
+Under these conditions, the simulation (run for `t_max` equivalent to 10 characteristic periods of ID14) demonstrated:
+-   **`Psi_ID14(t)`:** After an initial dip, `Psi_ID14` recovers into robust, sustained oscillations with peaks around 0.2.
+-   **`avg(Phi_field)(t)`:** Exhibits continuous, strong growth, reaching approximately 9 by `t_max`.
+-   **`I(t), R(t)`:** Show healthy, growing oscillations, indicative of an active system.
+
+This result is depicted in the following summary plot:
+![Sustained High-Activity Oscillations](plots/id14_id26_simulation_plot_summary.png "Plot showing Psi_ID14 oscillations and Phi_field growth with beta_psi_ID14=2.0, k_R_phi_prime=0.01, kappa_R=1.0")
+
+This successful stabilization marks a critical milestone, demonstrating that the coupled ID14-ID26 system can support complex, high-activity dynamics. It provides a robust baseline for the detailed quantitative analyses and further explorations outlined in the subsequent "Future Work" section.
+
 ## 5. Conclusion and Future Work
 
-This study successfully developed and stabilized a coupled simulation of ID14 Mind-Motion and ID26 Field-Charge dynamics. By incrementally introducing nonlinear feedback terms (`alpha_Phi_PDE`, `epsilon_Phi_PDE`) into the PDE for `Φ_field` and employing `tanh` saturation, we achieved a system that exhibits bounded, physically meaningful, and numerically stable behavior over extended simulation times.
-
-The results demonstrate that complex interactions and feedback loops can be modeled in a stable manner, provided appropriate stabilizing mechanisms (diffusion, saturation) are in place. The progressive increase in feedback strength showed a clear trend in counteracting negative drives on the `Φ_field`, pushing its average value towards zero and even into positive regimes transiently.
+**Conclusion:**
+This study successfully developed and stabilized a coupled simulation of ID14 Mind-Motion and ID26 Field-Charge dynamics. Through systematic parameter tuning, particularly focusing on the damping (`beta_psi_ID14`, `kappa_R`) and coupling (`k_R_phi_prime`) terms, a significant breakthrough was achieved: the system transitioned from low-activity states or silent failures to a robust, high-activity oscillatory regime. This state is characterized by sustained oscillations in `Psi_ID14` and continuous growth in the average `Phi_field`, demonstrating that the conceptual model can support complex, emergent, and numerically stable dynamics. The use of saturation mechanisms (`tanh`) remains a key component in ensuring boundedness during these active states. This achievement provides a critical foundation for deeper exploration of the Toy Universe's properties.
 
 **Future Work:**
-1.  **Complete Parameter Sweep:** Continue exploring higher values for `alpha_Phi_PDE` and `epsilon_Phi_PDE` to determine if a stable state with sustained positive `avg(Φ_field)` or complex oscillatory patterns can be achieved.
-2.  **Analyze Spatial Dynamics:** Investigate the spatial patterns in `Φ_field`, `V_field`, and `ρ_electric_field` in more detail, rather than just spatial averages.
-3.  **Sensitivity Analysis:** Conduct a more formal sensitivity analysis for other key parameters (e.g., `γ_Psi_ID14`, coupling constants `k_..._phi`, `Psi0_ID14`).
-4.  **Alternative Saturation Functions:** Explore other forms of saturation or limiting functions.
-5.  **Implicit Solvers:** For potentially stiffer systems or larger time steps, investigate implicit numerical methods.
-6.  **Higher Dimensions:** Extend the model to 2D or 3D to explore more complex spatial structures.
-7.  **Theoretical Refinement:** Compare simulation results against further theoretical predictions from the ID14/ID26 framework to refine the model equations and interpretations.
+The achievement of a stable high-activity state opens several avenues for immediate and future investigation, prioritized as follows:
+
+1.  **Deep Quantitative Analysis of the High-Activity State:**
+    *   Conduct spectral analysis (FFT) on `Psi_ID14(t)`, `I(t)`, `R(t)`, and `avg(Phi_field)(t)` to identify dominant frequencies and harmonics.
+    *   Perform phase space analysis for the ID14 ODE variables (e.g., `I` vs. `R`, `Psi_ID14` vs. `I`).
+    *   Analyze detailed spatial profiles of `Phi_field` at various time points, including FWHM analysis.
+    *   Calculate cross-correlations to understand lead/lag relationships between key variables.
+    *   Characterize the growth rate and long-term behavior of `avg(Phi_field)`.
+2.  **Extend Simulation Time (`t_max`):** For the current successful parameter set, run the simulation for significantly longer durations (e.g., 2x, 5x, 10x current `t_max`) to observe long-term stability, potential saturation of `Phi_field` growth, or emergence of new dynamic regimes.
+3.  **Robustness and Sensitivity Analysis:** Systematically vary key parameters (`beta_psi_ID14`, `k_R_phi_prime`, `kappa_R`, `alpha_psi_ID14`, etc.) around the successful set to map the basin of attraction for the high-activity state and identify potential bifurcations.
+4.  **Investigate Other Less-Tuned Parameters:** Explore the impact of PDE coefficients (`alpha_Phi_PDE`, `epsilon_Phi_PDE`, `beta_Phi_PDE`, `gamma_Phi_PDE`), saturation limits, and other ID14 coupling constants on the established high-activity baseline.
+5.  **Code Refinement:** Comment out or remove verbose diagnostic prints from `id14_id26_simulation.py`, retaining essential progress indicators.
+6.  **Analyze Spatial Dynamics (Broader):** Beyond the current high-activity state, investigate the spatial patterns in `Φ_field`, `V_field`, and `ρ_electric_field` in more detail.
+7.  **Explore Theoretical Refinements:**
+    *   Consider alternative saturation functions.
+    *   Investigate implicit numerical methods for potentially stiffer system configurations.
+    *   Extend the model to 2D or 3D for more complex spatial structures.
+    *   Compare simulation results against further theoretical predictions from the ID14/ID26 framework.
 
 This research provides a foundational step in simulating complex, coupled systems with nonlinear feedback, offering a computational testbed for exploring theories of interconnected mind-like and physical-like field dynamics.
 
