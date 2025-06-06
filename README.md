@@ -29,6 +29,14 @@ This work focuses on achieving stable, bounded, and physically plausible dynamic
     *   Attaining sustained high-amplitude growth of the `Φ_ID26` field.
     *   Observing the emergence of distinct spatial patterns (e.g., spots/peaks) by tuning saturation mechanisms and significantly reducing the diffusion coefficient (`gamma_Phi_p`). (See `project_log_2D_CPU_patterns_2025-06-06.md` for details).
 
+    **Example 2D Simulation Results:**
+
+    *Time Series Data (Psi_ID14 and avg(Phi_field)):*
+    ![2D Simulation Time Series](plots/id14_id26_2D_timeseries.png "Time series of Psi_ID14 and avg(Phi_field) in 2D CPU simulation")
+
+    *Final Spatial Pattern in Phi_field:*
+    ![2D Simulation Phi Field Heatmap](plots/id14_id26_2D_phi_final_heatmap.png "Heatmap of Phi_field at T_final showing spatial patterns")
+
 ## Key Documents & Resources
 
 *   **`LICENSE`:** Declaration of Prior Art. This document outlines the terms under which this work is shared, emphasizing its status as publicly disclosed prior art while retaining rights for commercial application by the author.
