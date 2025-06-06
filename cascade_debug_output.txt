@@ -1,0 +1,1 @@
+Script started, attempting to write to debug file.
