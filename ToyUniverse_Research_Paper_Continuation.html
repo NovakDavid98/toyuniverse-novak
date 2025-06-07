@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Universe: Advancements in 2D Spatial Pattern Dynamics</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 900px;
+            color: #333;
+            background-color: #fdfdfd;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #005a9c;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            color: #003366;
+            margin-bottom: 0.5em;
+        }
+
+        .authors, .date {
+            font-size: 1em;
+            color: #555;
+        }
+
+        nav#toc-nav {
+            background-color: #f0f8ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        nav#toc-nav h2 {
+            margin-top: 0;
+            font-size: 1.4em;
+            color: #003366;
+        }
+
+        nav#toc-nav ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        nav#toc-nav ul li a {
+            text-decoration: none;
+            color: #005a9c;
+        }
+
+        nav#toc-nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main section {
+            margin-bottom: 40px;
+        }
+
+        main section h2, main section h3, main section h4 {
+            color: #005a9c;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 1.5em;
+        }
+
+        main section h2 {
+            font-size: 1.8em;
+        }
+
+        main section h3 {
+            font-size: 1.5em;
+            color: #0073b7;
+        }
+        main section h4 {
+            font-size: 1.2em;
+            color: #008080; /* Teal for H4 */
+        }
+
+        p, li {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        figure {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        figcaption {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .math-equation {
+            display: block;
+            text-align: center;
+            margin: 1em auto;
+            font-size: 1.1em;
+            overflow-x: auto; /* For long equations */
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        pre code {
+            display: block;
+            padding: 10px;
+            overflow-x: auto;
+            background-color: #282c34; /* Dark background for code blocks */
+            color: #abb2bf; /* Light text for code blocks */
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* MathJax specific styling if needed */
+        .MJXc-display {
+            margin: 1em 0 !important;
+        }
+
+        @media print {
+            nav#toc-nav { page-break-inside: avoid; }
+            main > section { page-break-before: always; }
+            h2, h3, h4, h5, h6 { page-break-after: avoid; }
+            figure, img, li, table, pre { page-break-inside: avoid; }
+            p { orphans: 3; widows: 3; }
+            .mjx-container { page-break-inside: avoid !important; display: inline-block; width: 100%; text-align: center; }
+            div, article, aside, section, header, footer, nav { page-break-inside: avoid; }
+        }
+    </style>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Toy Universe: Advancements in 2D Spatial Pattern Dynamics</h1>
+        <p class="authors">David Novak (Conceptual Framework), Cascade AI (Simulation & Analysis)</p>
+        <p class="date">June 15, 2025</p>
+    </header>
+
+    <nav id="toc-nav">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#introduction">1. Introduction</a></li>
+            <li><a href="#model-overview">2. The 2D Coupled Model: A Brief Overview</a></li>
+            <li><a href="#advancements">3. Advancements in 2D Spatial Dynamics</a>
+                <ul>
+                    <li><a href="#baseline-2d">3.1. Baseline 2D Behavior and Long-Term Stability</a></li>
+                    <li><a href="#gamma-sweep">3.2. Impact of Diffusion (<code>&gamma;<sub>&Phi;,PDE</sub></code>): A Morphological Study</a></li>
+                    <li><a href="#delta-sweep">3.3. Role of Gradient Feedback (<code>&delta;<sub>&psi;d,p</sub></code>): Modulating Dynamics</a></li>
+                </ul>
+            </li>
+            <li><a href="#discussion">4. Discussion of 2D Findings</a></li>
+            <li><a href="#conclusion">5. Conclusion and Future Outlook</a></li>
+            <li><a href="#references">6. References</a></li>
+            <li><a href="#acknowledgements">7. Acknowledgements</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <p>This paper continues the exploration of a computational "Toy Universe" model, extending the previously reported 1D coupled Mind-Motion (ID14) and Field-Charge (ID26) system into a 2D spatial domain. The primary focus is on the emergence and characterization of spatial patterns within the <code>&Phi;<sub>ID26</sub></code> field. We detail the establishment of a stable 2D baseline simulation that exhibits spontaneous "awakening" and pattern formation. Systematic parameter sweeps were conducted for two key parameters: the diffusion coefficient <code>&gamma;<sub>&Phi;,PDE</sub></code> and the gradient feedback term <code>&delta;<sub>&psi;d,p</sub></code>. Results demonstrate that <code>&gamma;<sub>&Phi;,PDE</sub></code> is a critical determinant of pattern morphology, with low diffusion yielding labyrinthine structures and moderate diffusion producing distinct spot patterns. Conversely, <code>&delta;<sub>&psi;d,p</sub></code> was found to primarily modulate the temporal dynamics and mean states of ID14 variables, particularly <code>R(ID14)</code>, with minimal impact on the primary spatial scales of the emergent patterns. These findings provide new insights into the mechanisms governing self-organization and complexity in this coupled model system.</p>
+        </section>
+
+        <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>The Toy Universe project aims to computationally explore emergent complexity and life-like behaviors arising from foundational principles, inspired by Walter Russell's cosmology and the hypothesized interconnection between mind/consciousness and energy/geometry. Our previous work (Novak & Cascade AI, "A Coupled Model of Mind-Motion (ID14) and Field-Charge (ID26) Dynamics") successfully established and stabilized a 1D simulation of the coupled ID14 (Mind-Motion) and ID26 (Field-Charge) systems. A key achievement was the demonstration of system "awakening," where the model transitions from a quiescent state to one of sustained, high-activity oscillations, driven by carefully tuned nonlinear feedback and saturation mechanisms.</p>
+            <p>Building upon this foundation, the current paper reports on the extension of the model to a 2D spatial domain. The primary objective of this phase was to investigate the capacity of the coupled system to generate and sustain spatial patterns in the <code>&Phi;<sub>ID26</sub></code> field, and to understand how key system parameters influence these patterns. This paper details: (1) the establishment of a robust 2D baseline simulation exhibiting pattern formation; (2) systematic parameter sweeps of the diffusion coefficient (<code>&gamma;<sub>&Phi;,PDE</sub></code>) in the ID26 PDE, revealing its profound impact on pattern morphology; and (3) a similar sweep of the gradient-dependent feedback term (<code>&delta;<sub>&psi;d,p</sub></code>), elucidating its role in modulating system dynamics rather than primary pattern selection. These explorations provide deeper insights into the self-organizing capabilities of the Toy Universe model.</p>
+        </section>
+
+        <section id="model-overview">
+            <h2>2. The 2D Coupled Model: A Brief Overview</h2>
+            <p>The fundamental equations governing the ID14 (Mind-Motion) and ID26 (Field-Charge) systems are detailed in our prior publication. The ID14 system, comprising Imagination (<code>I</code>), Realization (<code>R</code>), and Consciousness Field (<code>&Psi;<sub>ID14</sub></code>), remains a system of coupled Ordinary Differential Equations (ODEs). The ID26 system, describing the evolution of a scalar potential field <code>&Phi;<sub>ID26</sub>(x, y, t)</code>, is governed by a Partial Differential Equation (PDE). The coupling remains bidirectional: <code>&Psi;<sub>ID14</sub></code> influences terms within the <code>&Phi;<sub>ID26</sub></code> PDE, and spatial averages or derivatives of <code>&Phi;<sub>ID26</sub></code> feedback onto the ID14 variables.</p>
+            <p>For the 2D simulations, the primary structural change involves the Laplacian operator (<code>&nabla;<sup>2</sup>&Phi;<sub>ID26</sub></code>) in the ID26 PDE, which is now implemented as a 2D finite difference approximation: <code>&nabla;<sup>2</sup>&Phi; &approx; (&Phi;<sub>i+1,j</sub> + &Phi;<sub>i-1,j</sub> + &Phi;<sub>i,j+1</sub> + &Phi;<sub>i,j-1</sub> - 4&Phi;<sub>i,j</sub>) / dx<sup>2</sup></code>. Spatial gradients and divergences for intermediate fields are similarly extended to 2D. The simulations reported here were performed using the Python script <code>id14_id26_simulation_2D_cpu.py</code> on a 50x50 grid with spatial extent <code>L<sub>x</sub>=L<sub>y</sub>=10.0</code>.</p>
+            <p>A baseline parameter set, evolved from the successful 1D configuration, was established that reliably produces system "awakening" and the formation of stable spot-like spatial patterns in <code>&Phi;<sub>ID26</sub></code>. Key parameters for this 2D baseline include <code>&gamma;<sub>&Phi;,PDE</sub> = 0.01</code> and <code>&delta;<sub>&psi;d,p</sub> = 0.01</code>, with others detailed in project logs (e.g., <code>project_log_2D_CPU_patterns.md</code>).</p>
+        </section>
+
+        <section id="advancements">
+            <h2>3. Advancements in 2D Spatial Dynamics</h2>
+
+            <section id="baseline-2d">
+                <h3>3.1. Baseline 2D Behavior and Long-Term Stability</h3>
+                <p>Initial 2D simulations with baseline parameters successfully replicated the "awakening" phenomenon observed in 1D. The system transitions from small random initial conditions in <code>&Phi;<sub>ID26</sub></code> and quiescent ID14 states to robust, sustained oscillations in all ID14 variables (<code>I, R, &Psi;<sub>ID14</sub></code>) and the spatially averaged <code>&Phi;<sub>ID26</sub></code> field. Concurrently, distinct spatial patterns emerge in <code>&Phi;<sub>ID26</sub></code>, typically forming an arrangement of spots or peaks.</p>
+                <p>An extended simulation run with <code>T<sub>final</sub> = 2400.0</code> (compared to a typical <code>T<sub>final</sub> = 800.0</code> for sweeps) confirmed the long-term stability of these dynamics and patterns. Notably, the <code>R(ID14)</code> variable, which influences the system's overall energy balance, was observed to saturate at a large negative mean value (around -400) while maintaining oscillations, indicating a stable attractor. The spatial spot patterns also persisted throughout this extended duration, confirming their robustness.</p>
+                <figure>
+                    <img src="imagesofresults/id14_id26_2D_T800_delta_psi_d_p0.0100_gamma_Phi_p0.0100_phi_final_heatmap.png" alt="Baseline 2D Spot Pattern (gamma_Phi_PDE=0.01, delta_psi_d_p=0.01)">
+                    <figcaption>Figure 1: Representative final <code>&Phi;<sub>ID26</sub></code> field heatmap for the baseline 2D simulation (<code>&gamma;<sub>&Phi;,PDE</sub>=0.01</code>, <code>&delta;<sub>&psi;d,p</sub>=0.01</code>, <code>T<sub>final</sub>=800</code>), showing stable spot patterns.</figcaption>
+                </figure>
+                <figure>
+                    <img src="imagesofresults/id14_id26_2D_T2400_delta_psi_d_p0.0100_gamma_Phi_p0.0100_timeseries.png" alt="Long-term Timeseries (T_final=2400)">
+                    <figcaption>Figure 2: Timeseries of ID14 variables and <code>avg(&Phi;<sub>ID26</sub>)</code> from an extended run (<code>T<sub>final</sub>=2400</code>) for the baseline parameters, demonstrating long-term stability and saturation of <code>R(ID14)</code>.</figcaption>
+                </figure>
+            </section>
+
+            <section id="gamma-sweep">
+                <h3>3.2. Impact of Diffusion (<code>&gamma;<sub>&Phi;,PDE</sub></code>): A Morphological Study</h3>
+                <p>To investigate the role of diffusion in pattern selection, a systematic sweep of the diffusion coefficient <code>&gamma;<sub>&Phi;,PDE</sub></code> was performed, holding other parameters (including <code>&delta;<sub>&psi;d,p</sub> = 0.01</code> and <code>T<sub>final</sub> = 800.0</code>) constant. The values tested for <code>&gamma;<sub>&Phi;,PDE</sub></code> were 0.001, 0.005, 0.010 (baseline), 0.020, and 0.050.</p>
+                
+                <h4>Key Observations from the <code>&gamma;<sub>&Phi;,PDE</sub></code> Sweep:</h4>
+                <ul>
+                    <li><strong><code>&gamma;<sub>&Phi;,PDE</sub> = 0.001</code> (Very Low Diffusion):</strong> A significant morphological transition occurred. Instead of spots, the <code>&Phi;<sub>ID26</sub></code> field organized into a complex, interconnected **labyrinthine or web-like spatial pattern**. Radially averaged spatial autocorrelation indicated a small characteristic feature size, consistent with fine details allowed by low diffusion. The FFT power spectrum was broad, lacking a single dominant wavelength.</li>
+                    <figure>
+                        <img src="imagesofresults/id14_id26_2D_T800_delta_psi_d_p0.0100_gamma_Phi_p0.0010_phi_final_heatmap.png" alt="Labyrinthine Pattern (gamma_Phi_PDE=0.001)">
+                        <figcaption>Figure 3: Labyrinthine pattern in <code>&Phi;<sub>ID26</sub></code> at very low diffusion (<code>&gamma;<sub>&Phi;,PDE</sub>=0.001</code>).</figcaption>
+                    </figure>
+
+                    <li><strong><code>&gamma;<sub>&Phi;,PDE</sub> = 0.005</code> (Low Diffusion):</strong> This regime presented patterns intermediate between the dense labyrinths and the baseline spots. Patterns consisted of smaller, more numerous, and somewhat less distinct spots, occasionally showing tendencies to connect.</li>
+                    <figure>
+                        <img src="imagesofresults/id14_id26_2D_T800_delta_psi_d_p0.0100_gamma_Phi_p0.0050_phi_final_heatmap.png" alt="Transitional Pattern (gamma_Phi_PDE=0.005)">
+                        <figcaption>Figure 4: Transitional pattern in <code>&Phi;<sub>ID26</sub></code> at low diffusion (<code>&gamma;<sub>&Phi;,PDE</sub>=0.005</code>).</figcaption>
+                    </figure>
+
+                    <li><strong><code>&gamma;<sub>&Phi;,PDE</sub> = 0.010</code> (Baseline Diffusion):</strong> This value reliably produced the characteristic well-defined, somewhat regularly spaced spot patterns (as shown in Figure 1).</li>
+
+                    <li><strong><code>&gamma;<sub>&Phi;,PDE</sub> = 0.020</code> (Moderate Diffusion):</strong> The spots became larger, fewer in number, and more diffuse compared to the baseline. The characteristic wavelength of the pattern increased.</li>
+                    <figure>
+                        <img src="imagesofresults/id14_id26_2D_T800_delta_psi_d_p0.0100_gamma_Phi_p0.0200_phi_final_heatmap.png" alt="Larger Spots (gamma_Phi_PDE=0.020)">
+                        <figcaption>Figure 5: Larger, more diffuse spots in <code>&Phi;<sub>ID26</sub></code> at moderate diffusion (<code>&gamma;<sub>&Phi;,PDE</sub>=0.020</code>).</figcaption>
+                    </figure>
+
+                    <li><strong><code>&gamma;<sub>&Phi;,PDE</sub> = 0.050</code> (High Diffusion):</strong> Spatial patterns became very weak and diffuse. While some large-scale, low-amplitude modulations might persist, the system approached a spatially homogeneous state. The strong diffusion effectively smoothed out emergent structures.</li>
+                     <figure>
+                        <img src="imagesofresults/id14_id26_2D_T800_delta_psi_d_p0.0100_gamma_Phi_p0.0500_phi_final_heatmap.png" alt="Diffuse State (gamma_Phi_PDE=0.050)">
+                        <figcaption>Figure 6: Highly diffuse <code>&Phi;<sub>ID26</sub></code> field at high diffusion (<code>&gamma;<sub>&Phi;,PDE</sub>=0.050</code>), approaching homogeneity.</figcaption>
+                    </figure>
+                </ul>
+                <p>In all these runs, the temporal dynamics of the ID14 variables and <code>avg(&Phi;<sub>ID26</sub>)</code> remained oscillatory and stable, indicating that the morphological changes were primarily due to the balance between reaction-like terms and diffusion, rather than system destabilization.</p>
+            </section>
+
+            <section id="delta-sweep">
+                <h3>3.3. Role of Gradient Feedback (<code>&delta;<sub>&psi;d,p</sub></code>): Modulating Dynamics</h3>
+                <p>The parameter <code>&delta;<sub>&psi;d,p</sub></code> controls a feedback mechanism where the spatial gradient of <code>&Phi;<sub>ID26</sub></code> influences an intermediate field <code>&Psi;<sub>d,feedback</sub></code>, which in turn affects the ID14 variable <code>R</code>. To assess its impact, <code>&delta;<sub>&psi;d,p</sub></code> was varied across values [0.0, 0.005, 0.01 (baseline), 0.02, 0.05, 0.1] for two distinct <code>&gamma;<sub>&Phi;,PDE</sub></code> regimes: the spot-forming regime (<code>&gamma;<sub>&Phi;,PDE</sub> = 0.010</code>) and the labyrinthine-forming regime (<code>&gamma;<sub>&Phi;,PDE</sub> = 0.001</code>). All runs were for <code>T<sub>final</sub> = 800.0</code>.</p>
+
+                <h4>Key Observations from the <code>&delta;<sub>&psi;d,p</sub></code> Sweep:</h4>
+                <ul>
+                    <li><strong>Pattern Morphology and Scale Invariance:</strong> The most striking finding was that the primary spatial morphology (spots vs. labyrinths, dictated by <code>&gamma;<sub>&Phi;,PDE</sub></code>) and the characteristic spatial scales (e.g., spot size, labyrinth strand thickness, inter-spot/strand spacing) were largely insensitive to variations in <code>&delta;<sub>&psi;d,p</sub></code>. For a given <code>&gamma;<sub>&Phi;,PDE</sub></code>, the patterns looked qualitatively very similar across the entire range of <code>&delta;<sub>&psi;d,p</sub></code> tested.</li>
+                    <figure>
+                        <img src="imagesofresults/id14_id26_2D_T800_delta_psi_d_p0.0000_gamma_Phi_p0.0100_phi_final_heatmap.png" alt="Spots with delta_psi_d_p=0.0 (gamma_Phi_PDE=0.01)">
+                        <figcaption>Figure 7: Spot pattern with <code>&delta;<sub>&psi;d,p</sub>=0.0</code> in the spot regime (<code>&gamma;<sub>&Phi;,PDE</sub>=0.01</code>). Compare with Figure 1 (<code>&delta;<sub>&psi;d,p</sub>=0.01</code>).</figcaption>
+                    </figure>
+                     <figure>
+                        <img src="imagesofresults/id14_id26_2D_T800_delta_psi_d_p0.1000_gamma_Phi_p0.0100_phi_final_heatmap.png" alt="Spots with delta_psi_d_p=0.1 (gamma_Phi_PDE=0.01)">
+                        <figcaption>Figure 8: Spot pattern with <code>&delta;<sub>&psi;d,p</sub>=0.1</code> in the spot regime (<code>&gamma;<sub>&Phi;,PDE</sub>=0.01</code>). Note the similarity in pattern scale to Figs 1 & 7.</figcaption>
+                    </figure>
+
+                    <li><strong>Modulation of <code>R(ID14)</code> Dynamics:</strong> While spatial patterns were unaffected, <code>&delta;<sub>&psi;d,p</sub></code> significantly influenced the temporal dynamics of the ID14 variable <code>R</code>. For instance, with <code>&delta;<sub>&psi;d,p</sub> = 0.01</code> (baseline), <code>R</code> typically saturated at a large negative mean value (around -400). When <code>&delta;<sub>&psi;d,p</sub> = 0.0</code>, <code>R</code> oscillated around a mean value closer to zero. Intermediate values of <code>&delta;<sub>&psi;d,p</sub></code> resulted in intermediate mean levels for <code>R</code>.</li>
+                    <figure>
+                        <img src="imagesofresults/id14_id26_2D_T800_delta_psi_d_p0.0000_gamma_Phi_p0.0100_timeseries.png" alt="Timeseries with delta_psi_d_p=0.0 (gamma_Phi_PDE=0.01)">
+                        <figcaption>Figure 9: Timeseries for <code>&delta;<sub>&psi;d,p</sub>=0.0</code> (spot regime), showing <code>R(ID14)</code> oscillating near zero. Compare R dynamics with Figure 2.</figcaption>
+                    </figure>
+
+                    <li><strong>System Stability:</strong> The system remained dynamically stable and produced patterns across all tested values of <code>&delta;<sub>&psi;d,p</sub></code> for both <code>&gamma;<sub>&Phi;,PDE</sub></code> regimes.</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="discussion">
+            <h2>4. Discussion of 2D Findings</h2>
+            <p>The extension of the Toy Universe model to 2D has yielded significant insights into its capacity for self-organization and spatial pattern formation. The parameter sweeps clearly delineate the roles of different mechanisms within the model.</p>
+            <p>The diffusion coefficient, <code>&gamma;<sub>&Phi;,PDE</sub></code>, emerges as the primary determinant of spatial pattern morphology. This is consistent with classical reaction-diffusion systems where the balance between local reaction kinetics (promoting heterogeneity) and diffusion (promoting homogeneity and setting a characteristic length scale) selects the pattern type (e.g., spots, stripes/labyrinths). The observed transition from labyrinthine structures at very low diffusion to spots at moderate diffusion, and finally towards homogeneity at high diffusion, aligns well with these general principles. The labyrinthine patterns suggest that at low <code>&gamma;<sub>&Phi;,PDE</sub></code>, local activations can expand and connect more freely before being constrained by diffusive effects, while higher <code>&gamma;<sub>&Phi;,PDE</sub></code> values lead to more isolated activation centers (spots).</p>
+            <p>In contrast, the gradient feedback term <code>&delta;<sub>&psi;d,p</sub></code> appears to play a more subtle role, primarily modulating the internal state of the ID14 system (specifically the mean level of <code>R(ID14)</code>) rather than directly selecting the spatial pattern's characteristic wavelength or morphology. The insensitivity of pattern scale to <code>&delta;<sub>&psi;d,p</sub></code> suggests that the core pattern-forming instability is rooted in other terms of the <code>&Phi;<sub>ID26</sub></code> PDE (likely the reaction-like terms involving <code>&alpha;<sub>&Phi;,PDE</sub></code>, <code>&epsilon;<sub>&Phi;,PDE</sub></code>, and their interplay with diffusion), and that <code>&delta;<sub>&psi;d,p</sub></code> serves more to adjust how the ID14 system responds to or coexists with these pre-established spatial structures. The change in <code>R(ID14)</code>'s behavior indicates that this feedback loop does influence the overall energy balance or dynamic equilibrium of the ID14 component of the coupled system.</p>
+            <p>The robust "awakening" and long-term stability of patterns in 2D are encouraging, demonstrating that the model can sustain complex spatio-temporal dynamics. The persistence of the autocorrelation anomaly at large lags across various parameter settings, as noted in project logs, warrants further technical investigation into its numerical origins (e.g., boundary conditions, normalization in analysis) but does not detract from the clear physical interpretations of pattern scales at shorter lags.</p>
+        </section>
+
+        <section id="conclusion">
+            <h2>5. Conclusion and Future Outlook</h2>
+            <p>The investigations reported in this paper mark a significant advancement in the study of the Toy Universe model. By extending the simulation to a 2D spatial domain, we have demonstrated its capacity for robust self-awakening and the formation of diverse spatial patterns, including spots and labyrinthine structures. Systematic parameter sweeps have clarified the distinct roles of key parameters: <code>&gamma;<sub>&Phi;,PDE</sub></code> (diffusion) is crucial for determining pattern morphology, while <code>&delta;<sub>&psi;d,p</sub></code> (gradient feedback) primarily modulates the internal dynamics of the ID14 system without significantly altering the spatial characteristics of the <code>&Phi;<sub>ID26</sub></code> field patterns.</p>
+            <p>These findings lay a strong foundation for further research. Immediate next steps, guided by our prioritized research goals, include:</p>
+            <ul>
+                <li><strong>Deeper Characterization of 2D Patterns:</strong> Employing more sophisticated quantitative measures (e.g., blob detection, detailed analysis of 2D FFTs and autocorrelations) to classify pattern morphologies and track their evolution more rigorously.</li>
+                <li><strong>Exploring Other Key Parameters:</strong> Systematically investigating the impact of other ID26 PDE coefficients (e.g., <code>&alpha;<sub>&Phi;,PDE</sub></code>, <code>&epsilon;<sub>&Phi;,PDE</sub></code>, saturation parameters <code>&Phi;0<sub>saturation,&alpha;,p</sub></code>, <code>&Phi;0<sub>saturation,&epsilon;,p</sub></code>) and ID14 parameters on pattern selection and stability.</li>
+                <li><strong>Investigating Bifurcations:</strong> More formally characterizing the transitions between different pattern regimes (e.g., labyrinthine to spots, patterned to homogeneous) as key parameters are varied.</li>
+                <li><strong>Elucidating Psi<sub>ID14</sub>'s Role:</strong> Further studies to understand how different dynamic regimes of <code>&Psi;<sub>ID14</sub></code> influence pattern selection and stability in the <code>&Phi;<sub>ID26</sub></code> field.</li>
+                <li><strong>Preparation for 3D Exploration:</strong> The insights gained from 2D dynamics will inform the eventual, more computationally intensive, exploration of 3D spatial structures, which will necessitate GPU acceleration.</li>
+            </ul>
+            <p>The continued exploration of the Toy Universe promises further insights into the fundamental mechanisms of emergent complexity and self-organization in coupled, nonlinear systems.</p>
+        </section>
+
+        <section id="references">
+            <h2>6. References</h2>
+            <ul>
+                <li>Novak, D. & Cascade AI. (2025). "A Coupled Model of Mind-Motion (ID14) and Field-Charge (ID26) Dynamics: Stability and Nonlinear Feedback in a Toy Universe." <em>ToyUniverse_Research_Paper.html</em> (Internal Document/Previous Publication).</li>
+                <li>Novak, D. (Ongoing). Project Log Files: <code>project_log_2D_CPU_patterns.md</code>, <code>gamma_phi_p_sweep_report.html</code>. (Internal Research Logs).</li>
+                <li>(Standard texts on reaction-diffusion systems, pattern formation, and numerical methods for PDEs, e.g., Murray, J.D. "Mathematical Biology"; Cross, M., & Greenside, H. "Pattern Formation and Dynamics in Nonequilibrium Systems" - to be formally cited as appropriate).</li>
+            </ul>
+        </section>
+
+        <section id="acknowledgements">
+            <h2>7. Acknowledgements</h2>
+            <p>The authors acknowledge the computational assistance, iterative development, and analysis support provided by the Cascade AI system in conducting the simulations and preparing this research paper.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 David Novak & Cascade AI. All rights reserved.</p>
+    </footer>
+</body>
+</html>
