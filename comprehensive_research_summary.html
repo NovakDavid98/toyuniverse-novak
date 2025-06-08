@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Universe: Comprehensive Research Summary - Spatial Pattern Dynamics</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 900px;
+            color: #333;
+            background-color: #fdfdfd;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #005a9c;
+            padding-bottom: 20px;
+        }
+        header h1 {
+            font-size: 2.2em;
+            color: #003366;
+            margin-bottom: 0.5em;
+        }
+        .authors, .date {
+            font-size: 1em;
+            color: #555;
+        }
+        nav#toc-nav {
+            background-color: #f0f8ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        nav#toc-nav h2 {
+            margin-top: 0;
+            font-size: 1.4em;
+            color: #003366;
+        }
+        nav#toc-nav ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        nav#toc-nav ul li a {
+            text-decoration: none;
+            color: #005a9c;
+        }
+        nav#toc-nav ul li a:hover {
+            text-decoration: underline;
+        }
+        main section {
+            margin-bottom: 40px;
+        }
+        main section h2, main section h3, main section h4 {
+            color: #005a9c;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 1.5em;
+        }
+        main section h2 { font-size: 1.8em; }
+        main section h3 { font-size: 1.5em; color: #0073b7; }
+        main section h4 { font-size: 1.2em; color: #008080; }
+        p, li { margin-bottom: 1em; text-align: justify; }
+        img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        figure { margin: 20px auto; text-align: center; }
+        figcaption {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+        .math-equation { display: block; text-align: center; margin: 1em auto; font-size: 1.1em; overflow-x: auto; }
+        code { font-family: 'Courier New', Courier, monospace; background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; font-size: 0.9em; }
+        pre code { display: block; padding: 10px; overflow-x: auto; background-color: #282c34; color: #abb2bf; border-radius: 5px; }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .image-grid { display: flex; flex-wrap: wrap; justify-content: space-around; }
+        .image-grid figure { flex-basis: 45%; margin: 10px; }
+        .image-grid img { max-width: 100%; }
+        @media print {
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+            }
+            /* Assuming 'subsection' is a class or custom element if used, otherwise adjust selector */
+            section, .subsection, article /* Common block elements for sections */ {
+                page-break-inside: avoid;
+            }
+            figure, table, pre, nav#toc-nav {
+                page-break-inside: avoid;
+            }
+            p {
+                orphans: 3;
+                widows: 3;
+            }
+            nav#toc-nav ul li {
+                 page-break-inside: avoid;
+            }
+            figure {
+                display: block; /* Ensure it's a block for page break rules */
+            }
+        }
+    </style>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Toy Universe: Comprehensive Research Summary</h1>
+        <h2>Focus on 2D Spatial Pattern Dynamics in the ID26 Field</h2>
+        <p class="authors">David Novak (Conceptual Framework), Cascade AI (Simulation & Analysis Support)</p>
+        <p class="date">June 8, 2025</p>
+    </header>
+
+    <nav id="toc-nav">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#introduction">1. Introduction: The Toy Universe</a></li>
+            <li><a href="#methodology">2. Methodology for 2D Pattern Analysis</a>
+                <ul>
+                    <li><a href="#model-overview">2.1. 2D Coupled Model Overview (ID14-ID26)</a></li>
+                    <li><a href="#simulation-parameters">2.2. Simulation Parameters for Pattern Regimes</a></li>
+                    <li><a href="#analysis-tools">2.3. Analysis Tools and Scripts</a></li>
+                </ul>
+            </li>
+            <li><a href="#results-labyrinth">3. Labyrinth Pattern Dynamics</a>
+                <ul>
+                    <li><a href="#labyrinth-formation">3.1. Formation and Initial Characteristics</a></li>
+                    <li><a href="#labyrinth-decay">3.2. Quantitative Decay Analysis (Spatial Variance)</a></li>
+                    <li><a href="#labyrinth-instability">3.3. Numerical Instability and Artifacts</a></li>
+                    <li><a href="#labyrinth-fft-acf">3.4. FFT/ACF Analysis of Labyrinth Structure (t=20)</a></li>
+                </ul>
+            </li>
+            <li><a href="#results-spot">4. Spot Pattern Dynamics</a>
+                <ul>
+                    <li><a href="#spot-formation">4.1. Formation and Stability</a></li>
+                    <li><a href="#spot-fft-acf">4.2. FFT/ACF Analysis (t=50, t=150, t=280)</a></li>
+                    <li><a href="#spot-evolution">4.3. Evolution of Order and Spacing</a></li>
+                </ul>
+            </li>
+            <li><a href="#discussion">5. Discussion and Key Findings</a></li>
+            <li><a href="#future-work-guide">6. How to Continue This Work</a>
+                 <ul>
+                    <li><a href="#project-structure">6.1. Project Directory Structure</a></li>
+                    <li><a href="#key-scripts">6.2. Key Scripts and Their Usage</a></li>
+                    <li><a href="#data-location">6.3. Data Locations</a></li>
+                    <li><a href="#dependencies">6.4. Dependencies</a></li>
+                </ul>
+            </li>
+            <li><a href="#conclusion">7. Conclusion</a></li>
+            <li><a href="#references">8. References</a></li>
+            <li><a href="#acknowledgements">9. Acknowledgements</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <p>This document summarizes the collaborative research efforts into the 2D spatial pattern dynamics of the ID26 field within David Novak's "Toy Universe" model. Building upon a foundational theoretical framework coupling a Mind-Motion system (ID14) and a Field-Charge system (ID26), this work focuses on the quantitative and qualitative analysis of emergent labyrinthine and spot patterns. We detail the simulation setup using <code>simulation_gpu_v2.py</code>, the development and application of various Python analysis scripts, and the key findings regarding pattern formation, stability, decay, characteristic length scales, and long-term evolution. The research highlights the transition from ordered labyrinth structures to numerical instability, and the evolution of spot patterns from a relatively ordered state towards a more disordered, liquid-like arrangement over time. This summary also serves as a guide for future continuation of this research, outlining project structure, key scripts, data locations, and dependencies.</p>
+        </section>
+
+        <section id="introduction">
+            <h2>1. Introduction: The Toy Universe</h2>
+            <p>The Toy Universe project, conceived by David Novak, explores the emergent complexity arising from a set of foundational principles and coupled dynamical systems. Central to this exploration are the ID14 (Mind-Motion) and ID26 (Field-Charge) systems. ID14 describes the evolution of consciousness-related variables (Imagination <i>I</i>, Realization <i>R</i>, and Consciousness Field &Psi;<sub>ID14</sub>), while ID26 models a physical-like scalar potential field &Phi;<sub>ID26</sub>(x,y,t). These systems are bidirectionally coupled, allowing for rich feedback dynamics.</p>
+            <p>Previous work (as detailed in <code>paper.md</code>, <code>ToyUniverse_Research_Paper.html</code>, and <code>ToyUniverse_Research_Paper_Continuation.html</code>) established the theoretical framework, mathematical formulations, and initial simulation results in 1D, demonstrating system 'awakening' into sustained oscillations. The research was then extended to 2D, revealing the formation of complex spatial patterns in the &Phi;<sub>ID26</sub> field, including labyrinthine structures and spot/peak arrays, depending on key parameters like diffusion (&gamma;<sub>&Phi;,PDE</sub>) and gradient feedback (&delta;<sub>&psi;d,p</sub>).</p>
+            <p>This summary focuses on the detailed analysis of these 2D spatial patterns, undertaken collaboratively to understand their formation, characteristics, stability, and evolution. Our joint efforts involved developing custom Python scripts to process and visualize simulation data, perform quantitative analyses (spatial variance, FFT, ACF), and interpret the results in the context of the Toy Universe model.</p>
+        </section>
+
+        <section id="methodology">
+            <h2>2. Methodology for 2D Pattern Analysis</h2>
+            <subsection id="model-overview">
+                <h3>2.1. 2D Coupled Model Overview (ID14-ID26)</h3>
+                <p>The core of the 2D simulations is the <code>simulation_gpu_v2.py</code> script (an evolution of <code>id14_id26_simulation_2D_cpu.py</code>), which implements the coupled ID14 ODEs and the ID26 PDE on a 2D spatial grid (typically 256x256 or 512x512) with periodic boundary conditions. The ID26 PDE, crucial for pattern formation, is of the form:</p>
+                <div class="math-equation">
+                $$ \frac{\partial \Phi}{\partial t} = \alpha_{\Phi} f_\alpha(\Phi, \Psi_c) - \beta_{\Phi} S_\Phi(\Phi, \Psi_c) + \gamma_{\Phi} \nabla^2 \Phi + \epsilon_{\Phi} f_\epsilon(\Phi, \Psi_d, \nabla\Phi, ...) $$ 
+                </div>
+                <p>Key features include nonlinear feedback terms modulated by scaled consciousness fields (&Psi;<sub>c</sub>, &Psi;<sub>d</sub>), diffusion (&gamma;<sub>&Phi;</sub> &nabla;<sup>2</sup> &Phi;), and saturation mechanisms for both &Psi;-driven terms and &Phi;-field self-growth to ensure numerical stability and bounded solutions. The specific functional forms and parameter values determine the emergent patterns.</p>
+            </subsection>
+            <subsection id="simulation-parameters">
+                <h3>2.2. Simulation Parameters for Pattern Regimes</h3>
+                <p>Our analyses focused on two primary parameter sets that produce distinct spatial patterns:</p>
+                <ul>
+                    <li><strong>Labyrinth Patterns:</strong> Typically observed with lower diffusion coefficients (e.g., <code>gamma_phi_pde = 0.0005</code> to <code>0.001</code>) and specific feedback strengths. These patterns are characterized by interconnected, stripe-like structures. The simulation data for this regime is primarily from <code>run_labyrinth_snapshots_v2/</code>.</li>
+                    <li><strong>Spot Patterns:</strong> Generally formed with higher diffusion coefficients (e.g., <code>gamma_phi_pde = 0.01</code>) and appropriate feedback. These patterns consist of arrays of localized peaks or spots. The simulation data for this regime is primarily from <code>run_spot_snapshots_v2/</code>.</li>
+                </ul>
+                <p>Other parameters, such as those controlling coupling strength, saturation limits, and ID14 dynamics, were set according to configurations found to produce sustained system activity and clear pattern formation, as documented in project logs and previous reports.</p>
+            </subsection>
+            <subsection id="analysis-tools">
+                <h3>2.3. Analysis Tools and Scripts</h3>
+                <p>A suite of Python scripts was developed and utilized for analyzing the <code>.npy</code> snapshot files generated by the simulations. These scripts reside in the <code>/teamspace/studios/this_studio/toyuniverse-novak/</code> directory:</p>
+                <ul>
+                    <li><code>inspect_npy_snapshot.py</code>: For basic inspection of individual snapshot files, providing statistics (min, max, mean, std), checking for NaNs/Infs, and visualizing a small data slice.</li>
+                    <li><code>qualitative_spatial_comparison.py</code>: For side-by-side plotting of snapshots from different simulations or time points, aiding qualitative comparison. Used adaptive colormaps for clarity.</li>
+                    <li><code>analyze_labyrinth_decay.py</code>: To calculate and plot the spatial variance of &Phi;<sub>field</sub> snapshots over time, quantifying the decay and stability of labyrinth patterns.</li>
+                    <li><code>inspect_labyrinth_spike_snapshots.py</code>: To visualize labyrinth snapshots during periods of high spatial variance, investigating the nature of numerical instabilities.</li>
+                    <li><code>analyze_single_snapshot_fft_acf.py</code>: To perform 2D Fast Fourier Transform (FFT) and Autocorrelation Function (ACF) analysis on a single snapshot, including radially averaged profiles, to determine characteristic length scales and order.</li>
+                </ul>
+                <p>These tools leverage libraries such as NumPy, Matplotlib, and SciPy.</p>
+            </subsection>
+        </section>
+
+        <section id="results-labyrinth">
+            <h2>3. Labyrinth Pattern Dynamics</h2>
+            <subsection id="labyrinth-formation">
+                <h3>3.1. Formation and Initial Characteristics</h3>
+                <p>Labyrinth patterns emerge under specific parameter conditions, notably lower diffusion. They typically form relatively quickly after system 'awakening,' characterized by interconnected, stripe-like regions of high and low &Phi;<sub>ID26</sub> values. These structures exhibit a characteristic width and spacing, visually appearing as a maze or fingerprint pattern.</p>
+                <figure>
+                    <img src="./analysis_results/labyrinth_t20_fft_acf/phi_snapshot_step0002000_t20.00_snapshot.png" alt="Labyrinth Pattern at t=20">
+                    <figcaption>Figure 1: Representative labyrinth pattern in &Phi;<sub>ID26</sub> at t=20 from <code>run_labyrinth_snapshots_v2</code>.</figcaption>
+                </figure>
+            </subsection>
+            <subsection id="labyrinth-decay">
+                <h3>3.2. Quantitative Decay Analysis (Spatial Variance)</h3>
+                <p>The <code>analyze_labyrinth_decay.py</code> script was used to track the spatial variance of &Phi;<sub>field</sub> over time for the labyrinth simulation. The variance serves as a measure of pattern amplitude or 'energy'.</p>
+                <p>Key findings from the variance analysis:</p>
+                <ul>
+                    <li>Initial high variance during pattern formation.</li>
+                    <li>A period of decay as the pattern coarsens or simplifies, settling to a lower variance state by approximately t=25-30.</li>
+                    <li>Unexpectedly, large spikes in variance were observed between t=100 and t=125, prior to the appearance of NaNs.</li>
+                </ul>
+                <figure>
+                    <img src="./analysis_results/labyrinth_decay/labyrinth_variance_decay.png" alt="Spatial Variance of Labyrinth Pattern Over Time">
+                    <figcaption>Figure 2: Spatial variance of the &Phi;<sub>ID26</sub> field over time for the labyrinth simulation, showing initial decay and late-time spikes.</figcaption>
+                </figure>
+            </subsection>
+            <subsection id="labyrinth-instability">
+                <h3>3.3. Numerical Instability and Artifacts</h3>
+                <p>The late-time variance spikes in the labyrinth simulation were investigated using <code>inspect_labyrinth_spike_snapshots.py</code>. Visual inspection of snapshots from t=100 to t=125 revealed that these spikes were not due to a re-emergence of coherent patterns but rather due to numerical artifacts:</p>
+                <ul>
+                    <li>Appearance of isolated, large-amplitude negative "holes" in the &Phi;<sub>ID26</sub> field.</li>
+                    <li>Scattered speckles of extreme values.</li>
+                </ul>
+                <p>These artifacts indicate growing numerical instability, culminating in NaN (Not a Number) values appearing in the simulation data from t=130 onwards. This suggests that the parameter regime for these labyrinth patterns, while initially producing interesting structures, is ultimately unstable in the long term with the current numerical scheme and parameters.</p>
+                 <figure>
+                    <img src="./analysis_results/labyrinth_spike_snapshots/phi_snapshot_step0012500_t125.00.png" alt="Labyrinth Pattern Instability at t=125">
+                    <figcaption>Figure 3: Snapshot at t=125 showing numerical artifacts (e.g., large negative hole) indicative of instability before NaN appearance.</figcaption>
+                </figure>
+            </subsection>
+            <subsection id="labyrinth-fft-acf">
+                <h3>3.4. FFT/ACF Analysis of Labyrinth Structure (t=20)</h3>
+                <p>The <code>analyze_single_snapshot_fft_acf.py</code> script was applied to a representative stable labyrinth snapshot (e.g., <code>phi_snapshot_step0002000_t20.00.npy</code>).</p>
+                <div class="image-grid">
+                    <figure>
+                        <img src="./analysis_results/labyrinth_t20_fft_acf/phi_snapshot_step0002000_t20.00_fft_2d.png" alt="2D FFT of Labyrinth (t=20)">
+                        <figcaption>Figure 4a: 2D Power Spectrum (FFT) of labyrinth at t=20.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./analysis_results/labyrinth_t20_fft_acf/phi_snapshot_step0002000_t20.00_fft_radial.png" alt="Radial FFT of Labyrinth (t=20)">
+                        <figcaption>Figure 4b: Radially Averaged Power Spectrum of labyrinth at t=20.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./analysis_results/labyrinth_t20_fft_acf/phi_snapshot_step0002000_t20.00_acf_2d.png" alt="2D ACF of Labyrinth (t=20)">
+                        <figcaption>Figure 4c: 2D Autocorrelation (ACF) of labyrinth at t=20.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./analysis_results/labyrinth_t20_fft_acf/phi_snapshot_step0002000_t20.00_acf_radial.png" alt="Radial ACF of Labyrinth (t=20)">
+                        <figcaption>Figure 4d: Radially Averaged Autocorrelation of labyrinth at t=20.</figcaption>
+                    </figure>
+                </div>
+                <p>Key findings from FFT/ACF analysis of the t=20 labyrinth pattern:</p>
+                <ul>
+                    <li><strong>FFT:</strong> The 2D power spectrum showed an isotropic ring, indicating a dominant spatial wavelength but no strong preferred orientation. The radially averaged FFT confirmed a peak at a spatial frequency $k \approx 4-5 \text{ pixels}^{-1}$.</li>
+                    <li><strong>ACF:</strong> The 2D ACF showed a central peak with surrounding oscillations. The radially averaged ACF exhibited a clear zero-crossing and subsequent trough, characteristic of stripe patterns. The first zero-crossing (related to stripe width) and the position of the first significant trough (related to stripe spacing) were consistent with the dominant wavelength found in the FFT.</li>
+                </ul>
+                <p>These analyses quantitatively confirmed the visual characteristics of the labyrinth pattern and provided a baseline for its typical length scales during its stable phase.</p>
+            </subsection>
+        </section>
+
+        <section id="results-spot">
+            <h2>4. Spot Pattern Dynamics</h2>
+            <subsection id="spot-formation">
+                <h3>4.1. Formation and Stability</h3>
+                <p>Spot patterns, consisting of an array of localized peaks in the &Phi;<sub>ID26</sub> field, form under different parameter conditions than labyrinths, notably with higher diffusion (e.g., <code>gamma_phi_pde = 0.01</code>). These patterns generally appear more stable over longer simulation times compared to the labyrinths we analyzed.</p>
+                <figure>
+                    <img src="./analysis_results/spot_t50_fft_acf/phi_snapshot_step0005000_t50.00_snapshot.png" alt="Spot Pattern at t=50">
+                    <figcaption>Figure 5: Representative spot pattern in &Phi;<sub>ID26</sub> at t=50 from <code>run_spot_snapshots_v2</code>.</figcaption>
+                </figure>
+            </subsection>
+            <subsection id="spot-fft-acf">
+                <h3>4.2. FFT/ACF Analysis (t=50, t=150, t=280)</h3>
+                <p>The <code>analyze_single_snapshot_fft_acf.py</code> script was used to analyze spot patterns at three different time points (t=50, t=150, t=280) from the <code>run_spot_snapshots_v2</code> simulation to understand their evolution.</p>
+                
+                <h4>Spot Pattern at t=50:</h4>
+                <div class="image-grid">
+                    <figure>
+                        <img src="./analysis_results/spot_t50_fft_acf/phi_snapshot_step0005000_t50.00_fft_radial.png" alt="Radial FFT Spot (t=50)">
+                        <figcaption>Figure 6a: Radial FFT at t=50.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./analysis_results/spot_t50_fft_acf/phi_snapshot_step0005000_t50.00_acf_radial.png" alt="Radial ACF Spot (t=50)">
+                        <figcaption>Figure 6b: Radial ACF at t=50.</figcaption>
+                    </figure>
+                </div>
+                <ul>
+                    <li>**FFT (t=50):** Showed a broader peak around $k \approx 9-10 \text{ pixels}^{-1}$. The 2D FFT showed some brighter lobes suggesting a degree of preferred orientation (local hexagonal packing).</li>
+                    <li>**ACF (t=50):** Displayed a clear central peak (average spot size) and distinct secondary peaks in the 2D ACF, indicative of local hexagonal order. The radial ACF showed a secondary peak around a lag of 12-14 pixels (average inter-spot distance).</li>
+                </ul>
+
+                <h4>Spot Pattern at t=150:</h4>
+                <div class="image-grid">
+                    <figure>
+                        <img src="./analysis_results/spot_t150_fft_acf/phi_snapshot_step0015000_t150.00_fft_radial.png" alt="Radial FFT Spot (t=150)">
+                        <figcaption>Figure 7a: Radial FFT at t=150.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./analysis_results/spot_t150_fft_acf/phi_snapshot_step0015000_t150.00_acf_radial.png" alt="Radial ACF Spot (t=150)">
+                        <figcaption>Figure 7b: Radial ACF at t=150.</figcaption>
+                    </figure>
+                </div>
+                <ul>
+                    <li>**FFT (t=150):** The peak corresponding to inter-spot spacing became broader and shifted slightly lower to $k \approx 7-9 \text{ pixels}^{-1}$.</li>
+                    <li>**ACF (t=150):** Secondary peaks indicating local order became weaker and more diffuse. The distinct secondary peak in the radial ACF was much less pronounced.</li>
+                </ul>
+
+                <h4>Spot Pattern at t=280:</h4>
+                <div class="image-grid">
+                    <figure>
+                        <img src="./analysis_results/spot_t280_fft_acf/phi_snapshot_step0028000_t280.00_fft_radial.png" alt="Radial FFT Spot (t=280)">
+                        <figcaption>Figure 8a: Radial FFT at t=280.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="./analysis_results/spot_t280_fft_acf/phi_snapshot_step0028000_t280.00_acf_radial.png" alt="Radial ACF Spot (t=280)">
+                        <figcaption>Figure 8b: Radial ACF at t=280.</figcaption>
+                    </figure>
+                </div>
+                <ul>
+                    <li>**FFT (t=280):** The inter-spot $k$ peak became very broad and less defined, roughly $k \approx 6-9 \text{ pixels}^{-1}$.</li>
+                    <li>**ACF (t=280):** Secondary peaks were almost entirely absent in 2D ACF. The radial ACF showed virtually no secondary peak, indicating a significant loss of regular inter-spot spacing. The central peak also decayed more rapidly.</li>
+                </ul>
+            </subsection>
+            <subsection id="spot-evolution">
+                <h3>4.3. Evolution of Order and Spacing</h3>
+                <p>The analysis across t=50, t=150, and t=280 revealed a clear trend in the spot pattern dynamics:</p>
+                <ul>
+                    <li><strong>Decreasing Order:** The initial local hexagonal order observed at t=50 significantly degrades over time. By t=280, the spots are arranged in a much more disordered, liquid-like fashion.</li>
+                    <li><strong>Increasing Inter-spot Spacing/Variability:** The characteristic spatial frequency ($k$) trends slightly lower (suggesting larger average spacing) and the peak becomes much broader, indicating increased variability in inter-spot distances.</li>
+                    <li><strong>Possible Spot Size Reduction:** The faster decay of the central ACF peak at later times might suggest that individual spots are becoming smaller or less internally coherent.</li>
+                </ul>
+                <p>This indicates that even the "stable" spot patterns exhibit long-term evolution, tending towards a more disordered state rather than a perfect, static crystal lattice.</p>
+            </subsection>
+        </section>
+
+        <section id="discussion">
+            <h2>5. Discussion and Key Findings</h2>
+            <p>Our collaborative analysis of the 2D spatial patterns in the Toy Universe ID26 field has yielded several key insights:</p>
+            <ul>
+                <li><strong>Labyrinth Dynamics:</strong> Labyrinthine patterns, while visually complex, demonstrate a tendency towards decay and, in the analyzed parameter regime, eventual numerical instability. Their characteristic length scales were successfully quantified using FFT/ACF during their stable phase. The instability appears as localized, high-amplitude artifacts before NaN propagation.</li>
+                <li><strong>Spot Pattern Evolution:</strong> Spot patterns are more robust over longer simulation times but are not static. They exhibit a clear evolution from a state of relatively good local hexagonal order towards a more disordered, liquid-like arrangement. This involves an increase in the variability of inter-spot spacing and potentially a change in average spot size.</li>
+                <li><strong>Importance of Quantitative Analysis:</strong> Visual inspection alone is insufficient to fully characterize these dynamic patterns. Quantitative tools like spatial variance analysis, FFT, and ACF are crucial for understanding pattern stability, characteristic length scales, degree of order, and their evolution over time.</li>
+                <li><strong>Tool Development:</strong> The suite of Python scripts developed provides a flexible toolkit for future analysis of similar simulation data from the Toy Universe project.</li>
+            </ul>
+            <p>These findings contribute to a deeper understanding of the emergent behaviors within the Toy Universe model, highlighting the complex interplay between model parameters, pattern morphology, and long-term dynamics.</p>
+        </section>
+
+        <section id="future-work-guide">
+            <h2>6. How to Continue This Work</h2>
+            <p>This section provides a guide for anyone looking to continue or build upon this research within the Toy Universe project.</p>
+            <subsection id="project-structure">
+                <h3>6.1. Project Directory Structure</h3>
+                <p>The primary workspace is <code>/teamspace/studios/this_studio/toyuniverse-novak/</code>. Key subdirectories include:</p>
+                <ul>
+                    <li><code>run_labyrinth_snapshots_v2/phi_snapshots_npy/</code>: Contains raw <code>.npy</code> snapshot data for labyrinth simulations.</li>
+                    <li><code>run_spot_snapshots_v2/phi_snapshots_npy/</code>: Contains raw <code>.npy</code> snapshot data for spot simulations.</li>
+                    <li><code>analysis_results/</code>: Intended for storing output from analysis scripts (plots, data files). Subdirectories like <code>labyrinth_decay/</code>, <code>labyrinth_t20_fft_acf/</code>, <code>spot_t50_fft_acf/</code>, etc., are created by the scripts.</li>
+                    <li><code>plots/</code>: General directory for plots, some referenced by markdown documents.</li>
+                    <li>Various <code>.py</code> scripts for simulation (e.g., <code>simulation_gpu_v2.py</code>) and analysis (listed below).</li>
+                    <li>Various <code>.md</code> files for project logs, paper drafts, and consultation messages.</li>
+                </ul>
+            </subsection>
+            <subsection id="key-scripts">
+                <h3>6.2. Key Scripts and Their Usage</h3>
+                <p>All analysis scripts are located in the root of the project directory (<code>/teamspace/studios/this_studio/toyuniverse-novak/</code>).</p>
+                <ul>
+                    <li><strong><code>simulation_gpu_v2.py</code></strong>: The primary script for running 2D simulations. Requires appropriate parameters to be set internally or via a configuration mechanism if implemented.
+                        <pre><code>python simulation_gpu_v2.py</code></pre>
+                    </li>
+                    <li><strong><code>inspect_npy_snapshot.py</code></strong>: Inspects a single <code>.npy</code> snapshot file.
+                        <pre><code>python inspect_npy_snapshot.py &lt;path_to_npy_file&gt;</code></pre>
+                    </li>
+                    <li><strong><code>qualitative_spatial_comparison.py</code></strong>: Compares snapshots visually. (Note: May need updates for flexible input or specific comparison tasks).
+                        <pre><code>python qualitative_spatial_comparison.py</code></pre>
+                    </li>
+                    <li><strong><code>analyze_labyrinth_decay.py</code></strong>: Calculates and plots spatial variance over time for labyrinth snapshots.
+                        <pre><code>python analyze_labyrinth_decay.py &lt;snapshot_directory&gt; &lt;output_directory&gt;</code></pre>
+                        Example: <code>python analyze_labyrinth_decay.py run_labyrinth_snapshots_v2/phi_snapshots_npy/ analysis_results/labyrinth_decay/</code>
+                    </li>
+                    <li><strong><code>inspect_labyrinth_spike_snapshots.py</code></strong>: Plots labyrinth snapshots from a specified time range, useful for inspecting instability.
+                        <pre><code>python inspect_labyrinth_spike_snapshots.py &lt;snapshot_directory&gt; &lt;output_directory&gt; --start_time &lt;t_start&gt; --end_time &lt;t_end&gt;</code></pre>
+                        Example: <code>python inspect_labyrinth_spike_snapshots.py run_labyrinth_snapshots_v2/phi_snapshots_npy/ analysis_results/labyrinth_spike_snapshots/ --start_time 100 --end_time 125</code>
+                    </li>
+                    <li><strong><code>analyze_single_snapshot_fft_acf.py</code></strong>: Performs FFT and ACF analysis on a single snapshot.
+                        <pre><code>python analyze_single_snapshot_fft_acf.py &lt;path_to_npy_file&gt; &lt;output_directory&gt;</code></pre>
+                        Example: <code>python analyze_single_snapshot_fft_acf.py run_spot_snapshots_v2/phi_snapshots_npy/phi_snapshot_step0005000_t50.00.npy analysis_results/spot_t50_fft_acf/</code>
+                    </li>
+                </ul>
+            </subsection>
+            <subsection id="data-location">
+                <h3>6.3. Data Locations</h3>
+                <ul>
+                    <li>Raw simulation snapshots (<code>.npy</code> files) are primarily in:
+                        <ul>
+                            <li><code>run_labyrinth_snapshots_v2/phi_snapshots_npy/</code></li>
+                            <li><code>run_spot_snapshots_v2/phi_snapshots_npy/</code></li>
+                        </ul>
+                    </li>
+                    <li>Analysis results (plots, derived data) are saved into subdirectories within <code>analysis_results/</code>. Each script typically creates its own output subdirectory.</li>
+                </ul>
+            </subsection>
+            <subsection id="dependencies">
+                <h3>6.4. Dependencies</h3>
+                <p>The project relies on a standard Python scientific computing environment. Key dependencies include:</p>
+                <ul>
+                    <li>Python (version 3.x)</li>
+                    <li>NumPy: For numerical operations and handling <code>.npy</code> files.</li>
+                    <li>Matplotlib: For plotting.</li>
+                    <li>SciPy: For signal processing (e.g., FFT, ACF) and potentially other scientific computations.</li>
+                    <li>Argparse: For command-line argument parsing in scripts.</li>
+                    <li>(For <code>simulation_gpu_v2.py</code>): CuPy if GPU acceleration is used, otherwise NumPy.</li>
+                </ul>
+                <p>It is recommended to use a virtual environment (e.g., venv or conda) to manage these dependencies. A <code>requirements.txt</code> file could be generated from such an environment for easy setup:</p>
+                <pre><code>pip freeze > requirements.txt</code></pre>
+            </subsection>
+        </section>
+
+        <section id="conclusion">
+            <h2>7. Conclusion</h2>
+            <p>This collaborative research effort has significantly advanced the understanding of 2D spatial pattern dynamics within the Toy Universe model. Through the development of targeted analysis scripts and systematic application of quantitative methods, we have characterized the formation, stability, and evolution of both labyrinthine and spot patterns in the ID26 field. The labyrinth patterns, while initially well-structured, exhibit long-term instability in the studied regime. Spot patterns, conversely, are more robust but undergo a clear evolution towards a more disordered state over time. These findings provide a richer picture of the emergent behaviors possible within this complex system and lay a solid groundwork for future investigations, including the planned comparison of ID14 dynamics between these different pattern regimes.</p>
+        </section>
+
+        <section id="references">
+            <h2>8. References</h2>
+            <ol>
+                <li>Novak, D. (Internal Works). Toy Universe Project: Foundational Research Documents, Conceptual Papers, and Simulation Logs. Teplice, Czech Republic, 2023-2025. (Includes <code>paper.md</code>, <code>ToyUniverse_Research_Paper.html</code>, <code>ToyUniverse_Research_Paper_Continuation.html</code>, and various project logs.)</li>
+                <li>(Standard texts on pattern formation, numerical methods for PDEs, FFT, and ACF analysis as appropriate for further theoretical background.)</li>
+            </ol>
+        </section>
+
+        <section id="acknowledgements">
+            <h2>9. Acknowledgements</h2>
+            <p>The authors acknowledge the conceptual framework and foundational model provided by David Novak. The simulation development, data analysis, and interpretation were significantly supported by the collaborative efforts with the Cascade AI system. This work represents a synergistic combination of human-driven conceptualization and AI-assisted execution and analysis.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 David Novak & Cascade AI. All rights reserved.</p>
+    </footer>
+</body>
+</html>
